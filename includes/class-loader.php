@@ -5,6 +5,9 @@ if( !class_exists('MEDIR_Autoloader') ) {
 
             //Load Helpers
             require_once MEDIR_PLUGIN_DIR . 'includes/helpers/trait-add-meta-fileds-helper.php';
+            require_once MEDIR_PLUGIN_DIR . 'includes/helpers/trait-team-meta-fields-helper.php';
+            require_once MEDIR_PLUGIN_DIR . 'includes/helpers/trait-member-team-save-helper.php';
+            require_once MEDIR_PLUGIN_DIR . 'includes/helpers/trait-member-info-save-helper.php';
 
             // Load Admin Classes
             require_once MEDIR_PLUGIN_DIR . 'includes/Admin/class-admin-dashboard.php';
