@@ -20,9 +20,16 @@ if (!class_exists('MEDIR_Fill_Custom_Column_Value')) {
                     break;
 
                 case 'team':
-                    $teams = get_the_terms($post_id, 'medir_team');
-                    if (!empty($teams) && !is_wp_error($teams)) {
-                        $team_names = wp_list_pluck($teams, 'name');
+                    $selected_teams = get_post_meta($post_id, '_medir_assigned_teams', true);
+                    if (!empty($selected_teams) && is_array($selected_teams)) {
+                        $team_names = [];
+
+                        foreach ($selected_teams as $team_id) {
+                            $team_title = get_the_title($team_id);
+                            if ($team_title) {
+                                $team_names[] = $team_title;
+                            }
+                        }
                         echo esc_html(implode(', ', $team_names));
                     } else {
                         echo '—';

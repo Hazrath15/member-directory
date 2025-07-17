@@ -20,7 +20,7 @@ if ( ! class_exists( 'MEDIR_Register_Post_Type' ) ) {
                 'supports' => ['thumbnail'],
                 'rewrite' => ['slug' => 'members'],
                 'has_archive' => true,
-                'menu_icon' => 'dashicons-groups',
+                'menu_icon' => 'dashicons-admin-users',
             ]);
             register_post_type('medir_teams', [
                 'labels'      => [

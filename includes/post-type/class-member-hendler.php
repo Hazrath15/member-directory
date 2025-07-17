@@ -17,7 +17,7 @@ if ( ! class_exists( 'MEDIR_Save_Member_Handler' ) ) {
 
             if ($first_name && $last_name) {
                 $full_name = $first_name . ' ' . $last_name;
-                $slug      = sanitize_title($full_name);
+                $slug      = sanitize_title($first_name . '_' . $last_name);
 
                 wp_update_post([
                     'ID'         => $post_id,
