@@ -35,7 +35,6 @@ trait MEDIR_User_Email_Render_Helper {
             $content = get_post_meta($message->ID, '_medir_message', true);
             $date = get_the_date('', $message->ID);
             echo '<li>';
-            echo '<strong>' . esc_html($from) . '</strong> on <em>' . esc_html($date) . '</em><br>';
             echo '<strong>' . esc_html($name) . '</strong> (' . esc_html($from) . ') on <em>' . esc_html($date) . '</em><br>';
             echo '<div style="margin:5px 0 15px; padding:10px; background:#f9f9f9; border-left:3px solid #007cba;">' . nl2br(esc_html($content)) . '</div>';
             echo '</li>';
