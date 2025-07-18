@@ -3,6 +3,9 @@ if( !class_exists('MEDIR_Autoloader') ) {
     class MEDIR_Autoloader {
         public static function init() {
 
+            //Load Assets
+            require_once MEDIR_PLUGIN_DIR . 'includes/Assets/class-include-assets.php';
+
             //Load Helpers
             require_once MEDIR_PLUGIN_DIR . 'includes/helpers/trait-add-meta-fileds-helper.php';
             require_once MEDIR_PLUGIN_DIR . 'includes/helpers/trait-team-meta-fields-helper.php';
@@ -39,6 +42,8 @@ if( !class_exists('MEDIR_Autoloader') ) {
             new MEDIR_Custom_User_Column();
             new MEDIR_Fill_Custom_Column_Value();
             new MEDIR_Admin_Notice();
+            new MEDIR_Include_Assets();
+
         }
     }
 }

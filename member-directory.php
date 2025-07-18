@@ -21,4 +21,5 @@ MEDIR_Autoloader::init();
 register_activation_hook(__FILE__, ['MEDIR_Activator', 'activate']);
 register_deactivation_hook(__FILE__, ['MEDIR_Deactivator', 'deactivate']);
 
+
 ?>
