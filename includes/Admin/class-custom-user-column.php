@@ -13,6 +13,7 @@ if (!class_exists('MEDIR_Custom_User_Column')) {
             $columns['team']       = 'Team';
             $columns['status']     = 'Status';
             $columns['date']       = 'Date';
+            $columns['messages']   = 'Messages';
             return $columns;
         }
     }

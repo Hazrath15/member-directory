@@ -39,6 +39,15 @@ if (!class_exists('MEDIR_Fill_Custom_Column_Value')) {
                 case 'status':
                     echo esc_html(get_post_meta($post_id, '_medir_status', true));
                     break;
+                case 'messages':
+                    global $wpdb;
+                    $email = get_post_meta($post_id, '_medir_email', true);
+                    $count = $wpdb->get_var($wpdb->prepare(
+                        "SELECT COUNT(*) FROM {$wpdb->postmeta} WHERE meta_key = '_medir_member_email' AND meta_value = %s",
+                        $email
+                    ));
+                    echo intval($count);
+                break;
             }
         }
     }

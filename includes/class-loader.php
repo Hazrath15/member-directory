@@ -20,6 +20,7 @@ if( !class_exists('MEDIR_Autoloader') ) {
             require_once MEDIR_PLUGIN_DIR . 'includes/Admin/class-fill-custom-column-value.php';
             require_once MEDIR_PLUGIN_DIR . 'includes/Admin/class-custom-user-column.php';
             require_once MEDIR_PLUGIN_DIR . 'includes/Admin/class-admin-notice.php';
+            require_once MEDIR_PLUGIN_DIR . 'includes/Admin/class-email-submission-handler.php';
 
             //Load Post Type Classes
             require_once MEDIR_PLUGIN_DIR . 'includes/post-type/class-register-post-type.php';
@@ -43,6 +44,7 @@ if( !class_exists('MEDIR_Autoloader') ) {
             new MEDIR_Custom_User_Column();
             new MEDIR_Fill_Custom_Column_Value();
             new MEDIR_Admin_Notice();
+            new MEDIR_Email_Submission_Handler();
             new MEDIR_Include_Assets();
 
         }
