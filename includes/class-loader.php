@@ -12,6 +12,7 @@ if( !class_exists('MEDIR_Autoloader') ) {
             require_once MEDIR_PLUGIN_DIR . 'includes/helpers/trait-member-team-save-helper.php';
             require_once MEDIR_PLUGIN_DIR . 'includes/helpers/trait-member-info-save-helper.php';
             require_once MEDIR_PLUGIN_DIR . 'includes/helpers/trait-validate-email-helper.php';
+            require_once MEDIR_PLUGIN_DIR . 'includes/helpers/trait-user-email-render-helper.php';
 
             // Load Admin Classes
             require_once MEDIR_PLUGIN_DIR . 'includes/Admin/class-admin-dashboard.php';
