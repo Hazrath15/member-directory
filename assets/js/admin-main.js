@@ -1,19 +1,11 @@
-
 jQuery(document).ready(function ($) {
-    let mediaUploader;
-
     $('.medir-upload-btn').on('click', function (e) {
         e.preventDefault();
 
         const targetInputId = $(this).data('target');
         const imagePreviewId = targetInputId.replace('medir_', '') + '_preview';
 
-        if (mediaUploader) {
-            mediaUploader.open();
-            return;
-        }
-
-        mediaUploader = wp.media({
+        const mediaUploader = wp.media({
             title: 'Select Image',
             button: {
                 text: 'Use this image'
