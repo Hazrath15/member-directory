@@ -2,13 +2,13 @@
 Contributors: hazrathali
 Tags: members, teams, directory, contact form, custom post type
 Requires at least: 5.5
-Tested up to: 6.5
+Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.0
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-A simple and flexible WordPress plugin to manage members and associate them with multiple teams. Includes frontend profiles, contact forms, and admin message tracking.
+A simple and flexible WordPress plugin to manage members and associate them with multiple teams.
 
 == Description ==
 

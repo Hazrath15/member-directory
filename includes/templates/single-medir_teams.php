@@ -12,19 +12,15 @@
                 </div>
 
                 <?php
+                
                 // Get current team ID
                 $team_id = get_the_ID();
-
                 $args = array(
-                'meta_key' => '_medir_assigned_teams',
-                'meta_value' => '"' . get_the_ID() . '"',
-                'meta_compare' => '=',
-                'post_type' => 'medir_member'
+                'post_type' => 'medir_member',
+
                 );
                 // Query members linked to this team
                 $members = new WP_Query($args);
-                echo '<pre>';
-                print_r($members);
                 ?>
 
                 <?php if ($members->have_posts()) : ?>
@@ -32,9 +28,32 @@
                         <h3>Team Members:</h3>
                         <ul>
                             <?php while ($members->have_posts()) : $members->the_post(); ?>
-                                <li>
-                                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                                </li>
+                                
+                                    <?php
+                                    $assigned_team_ids = get_post_meta(get_the_ID(), '_medir_assigned_teams', true);
+                                    if (empty($assigned_team_ids) || !is_array($assigned_team_ids) || !in_array($team_id, $assigned_team_ids)) {
+                                        continue;
+                                    }
+                                    ?>
+                                    <li>
+                                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+
+                                        <?php
+                                        // Get assigned team IDs (array)
+                                        
+
+                                        if (!empty($assigned_team_ids) && is_array($assigned_team_ids)) :
+                                            echo '<ul class="assigned-teams">';
+                                            foreach ($assigned_team_ids as $assigned_team_id) :
+                                                
+                                                $team_title = get_the_title($assigned_team_id);
+                                                echo '<li>' . esc_html($team_title) . ' (ID: ' . esc_html($assigned_team_id) . ')</li>';
+                                                
+                                            endforeach;
+                                            echo '</ul>';
+                                        endif;
+                                        ?>
+                                    </li>
                             <?php endwhile; ?>
                         </ul>
                     </div>

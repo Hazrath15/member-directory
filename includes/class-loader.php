@@ -19,8 +19,6 @@ if( !class_exists('MEDIR_Autoloader') ) {
             require_once MEDIR_PLUGIN_DIR . 'includes/helpers/trait-team-listing-template-load-helper.php';
 
             // Load Admin Classes
-            require_once MEDIR_PLUGIN_DIR . 'includes/Admin/class-admin-dashboard.php';
-            require_once MEDIR_PLUGIN_DIR . 'includes/Admin/class-admin-settings.php';
             require_once MEDIR_PLUGIN_DIR . 'includes/Admin/class-fill-custom-column-value.php';
             require_once MEDIR_PLUGIN_DIR . 'includes/Admin/class-custom-user-column.php';
             require_once MEDIR_PLUGIN_DIR . 'includes/Admin/class-admin-notice.php';
@@ -39,7 +37,6 @@ if( !class_exists('MEDIR_Autoloader') ) {
             //Load Template Loader
             require_once MEDIR_PLUGIN_DIR . 'includes/class-load-template.php';
 
-            new MEDIR_Admin_Settings();
             new MEDIR_Register_Post_Type();
             new MEDIR_Add_Meta_Box();
             new MEDIR_Save_Post_Hanlder();

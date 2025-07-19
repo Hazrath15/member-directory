@@ -13,7 +13,8 @@ trait MEDIR_Team_Meta_Fields_Helper {
         echo '<select name="medir_assigned_teams[]" multiple style="width:100%; height:auto;">';
         foreach ($teams as $team) {
             $selected = in_array($team->ID, $selected_teams) ? 'selected' : '';
-            echo "<option value='{$team->ID}' $selected>{$team->post_title}</option>";
+            echo "<option value='" . esc_attr($team->ID) . "' ".esc_attr($selected).">" . esc_html($team->post_title) . "</option>";
+
         }
         echo '</select>';
     }
