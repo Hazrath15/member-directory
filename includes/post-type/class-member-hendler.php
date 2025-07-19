@@ -25,6 +25,12 @@ if ( ! class_exists( 'MEDIR_Save_Member_Handler' ) ) {
                     'post_name'  => $slug,
                 ]);
             }
+            // Flush rewrite rules once to make sure the new slug works
+            delete_option('medir_slug_flushed_' . $post_id);
+            if (!get_option('medir_slug_flushed_' . $post_id)) {
+                flush_rewrite_rules();
+                update_option('medir_slug_flushed_' . $post_id, 1);
+            }
             add_action('save_post_medir_member', [$this, 'update_title_and_slug'], 20, 2);
         }
     }
