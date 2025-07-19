@@ -39,13 +39,6 @@ if ( ! class_exists( 'MEDIR_Register_Post_Type' ) ) {
                 'has_archive' => true,
                 'menu_icon' => 'dashicons-groups',
             ]);
-
-            register_taxonomy('medir_team', 'medir_member', [
-                'label' => __('Teams','member-directory'),
-                'hierarchical' => false,
-                'public' => true,
-                'rewrite' => ['slug' => 'teams'],
-            ]);
         }
     }
 }
