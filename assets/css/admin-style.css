@@ -1,0 +1,85 @@
+.medir-meta-box {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 24px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    font-family: 'Inter', sans-serif;
+}
+
+.medir-meta-box h3 {
+    margin-top: 0;
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #1e293b;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 10px;
+}
+
+.medir-meta-box p {
+    margin-bottom: 20px;
+}
+
+.medir-meta-box label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #334155;
+}
+
+.medir-meta-box input[type="text"],
+.medir-meta-box input[type="email"],
+.medir-meta-box textarea,
+.medir-meta-box select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background-color: #f9fafb;
+    font-size: 14px;
+    color: #111827;
+    transition: all 0.2s;
+}
+
+.medir-meta-box input[type="color"] {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+}
+
+.medir-meta-box input:focus,
+.medir-meta-box textarea:focus,
+.medir-meta-box select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    outline: none;
+}
+
+.medir-meta-box textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.medir-meta-box img {
+    display: block;
+    max-width: 100px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.medir-meta-box .medir-upload-btn {
+    display: inline-block;
+    background-color: #3b82f6;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background-color 0.2s ease;
+}
+
