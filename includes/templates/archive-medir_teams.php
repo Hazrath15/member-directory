@@ -9,7 +9,7 @@
     <div class="container">
         <div class="team-list">
             <?php if (have_posts()) : ?>
-                <div class="row">
+                <div class="row gy-4">
                     <?php while (have_posts()) : the_post(); ?>
                     <div class="col-lg-3 col-md-4 col-sm-2 col-12">
                         <div class="team-item">

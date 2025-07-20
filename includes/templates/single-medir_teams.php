@@ -15,7 +15,7 @@
                         <?php the_content(); ?>
                     </div>
                     <h3>Team Members:</h3>
-                    <div class="row">
+                    <div class="row gy-4">
                         <?php
                         
                         $team_id = get_the_ID();
