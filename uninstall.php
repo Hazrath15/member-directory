@@ -38,6 +38,7 @@ $submission_meta_keys = [
     '_medir_member_email',
     '_medir_message',
     '_medir_sender_email',
+    '_medir_sender_name',
 ];
 
 foreach ($submission_posts as $submission_id) {

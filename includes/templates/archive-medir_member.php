@@ -2,7 +2,7 @@
 
 <div class="medir-archive-wrapper">
 
-    <div class="breadcrumb-area" style="background:url(<?php echo plugins_url( 'assets/img/breadcrumb-bg.png', plugin_dir_path( __DIR__ ) ); ?>) no-repeat center; background-size: cover;">
+    <div class="breadcrumb-area" style="background:url(<?php echo esc_url(plugins_url( 'assets/img/breadcrumb-bg.png', plugin_dir_path( __DIR__ ) )); ?>) no-repeat center; background-size: cover;">
         <div class="container">
             <h1>Our Members</h1>
         </div>

@@ -5,7 +5,7 @@ if ( ! class_exists( 'MEDIR_Email_Submission_Handler') ) {
             add_action('init', [$this, 'medir_handle_contact_form']);
         }
         function medir_handle_contact_form() {
-            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['to_email'])) {
+            if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['to_email'])) {
                 $to = sanitize_email($_POST['to_email']);
                 $name = sanitize_text_field($_POST['full_name']);
                 $from = sanitize_email($_POST['from_email']);

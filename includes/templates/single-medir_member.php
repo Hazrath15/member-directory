@@ -26,7 +26,7 @@ if ($status !== 'active') {
             </div>
         <?php else: ?>
             <div class="member-cover">
-                <img src="<?php echo plugins_url( 'assets/img/cover-placeholder.jpg', plugin_dir_path( __DIR__ ) ); ?>" alt="Cover Image">
+                <img src="<?php echo esc_url(plugins_url( 'assets/img/cover-placeholder.jpg', plugin_dir_path( __DIR__ ) )); ?>" alt="Cover Image">
             </div>
         <?php endif; ?>
 
@@ -37,7 +37,7 @@ if ($status !== 'active') {
                 </div>
             <?php else: ?>
                 <div class="profile-photo">
-                    <img src="<?php echo plugins_url( 'assets/img/profile-placeholder.jpg', plugin_dir_path( __DIR__ ) ); ?>" alt="Profile Imag">
+                    <img src="<?php echo esc_url(plugins_url( 'assets/img/profile-placeholder.jpg', plugin_dir_path( __DIR__ ) )); ?>" alt="Profile Imag">
                 </div>
             <?php endif; ?>
             <h1><?php echo esc_html($first . ' ' . $last); ?></h1>
