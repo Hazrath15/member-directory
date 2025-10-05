@@ -9,11 +9,21 @@ if ( ! class_exists( 'MEDIR_Save_Member_Handler' ) ) {
         public function update_title_and_slug($post_id, $post) {
             remove_action('save_post_medir_member', [$this, 'update_title_and_slug'], 20);
 
+            if ( ! isset($_POST['medir_meta_nonce']) || 
+                ! wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['medir_meta_nonce'])), 'medir_save_meta_fields') ) {
+                return; // Nonce is missing or invalid — abort saving
+            }
+
             if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
             if ($post->post_type !== 'medir_member') return;
 
-            $first_name = sanitize_text_field($_POST['medir_first_name'] ?? '');
-            $last_name  = sanitize_text_field($_POST['medir_last_name'] ?? '');
+            $first_name = isset($_POST['medir_first_name'])
+            ? sanitize_text_field(wp_unslash($_POST['medir_first_name']))
+            : '';
+
+            $last_name = isset($_POST['medir_last_name'])
+                ? sanitize_text_field(wp_unslash($_POST['medir_last_name']))
+                : '';
 
             if ($first_name && $last_name) {
                 $full_name = $first_name . ' ' . $last_name;

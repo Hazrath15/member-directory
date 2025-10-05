@@ -85,10 +85,12 @@ if ($status !== 'active') {
                 <div class="col-lg-6 col-md-6 col-sm-6 col-12">
                     <div class="contact-form">
                         <form method="post" action="">
+                            <?php wp_nonce_field('medir_save_form_action', 'medir_form_nonce'); ?>
                             <input type="text" name="full_name" required placeholder="Your Name">
                             <input type="email" name="from_email" required placeholder="Your Email">
                             <textarea name="message" required placeholder="Your Message"></textarea>
                             <input type="hidden" name="to_email" value="<?php echo esc_attr($email); ?>">
+                            <?php wp_nonce_field('medir_contact_form'); ?>
                             <button type="submit">Send</button>
                         </form>
                     </div>

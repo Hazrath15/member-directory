@@ -1,4 +1,4 @@
-=== Member Directory ===
+=== Membrio - Member Directory ===
 Contributors: hazrathali
 Tags: members, teams, directory, contact form, custom post type
 Requires at least: 5.5

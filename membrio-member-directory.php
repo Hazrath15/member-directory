@@ -1,13 +1,14 @@
 <?php
 /*
-* Plugin Name: Member Directory
+* Plugin Name: Membrio - Member Directory
 * Description: This is a member directory plugin. From this plugin the plugin development lession is starting.
 * Version: 1.0.0
+* Contributor: hazrathali
 * Author: Hazrath Ali
 * Author URI: https://github.com/Hazrath15
 * License: GPL-2.0+
 * License URI: https://www.gnu.org/licenses/gpl-2.0.html
-* Text Domain: member-directory
+* Text Domain: membrio-member-directory
 */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly

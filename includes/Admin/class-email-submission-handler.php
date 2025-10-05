@@ -5,12 +5,18 @@ if ( ! class_exists( 'MEDIR_Email_Submission_Handler') ) {
             add_action('init', [$this, 'medir_handle_contact_form']);
         }
         function medir_handle_contact_form() {
-            if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['to_email'])) {
-                $to = sanitize_email($_POST['to_email']);
-                $name = sanitize_text_field($_POST['full_name']);
-                $from = sanitize_email($_POST['from_email']);
-                $msg = sanitize_textarea_field($_POST['message']);
 
+            if ( ! isset($_POST['medir_form_nonce']) || 
+                ! wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['medir_form_nonce'])), 'medir_save_form_action') ) {
+                return; // Nonce is missing or invalid — abort saving
+            }
+
+            if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['to_email'])) {
+                $to   = isset($_POST['to_email']) ? sanitize_email( wp_unslash( $_POST['to_email'] ) ) : '';
+                $name = isset($_POST['full_name']) ? sanitize_text_field( wp_unslash( $_POST['full_name'] ) ) : '';
+                $from = isset($_POST['from_email']) ? sanitize_email( wp_unslash( $_POST['from_email'] ) ) : '';
+                $msg  = isset($_POST['message']) ? sanitize_textarea_field( wp_unslash( $_POST['message'] ) ) : '';
+ 
                 wp_mail($to, "New Message from $name", $msg, ['From: ' . $from]);
 
                 // Save to DB

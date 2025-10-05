@@ -4,6 +4,8 @@ trait MEDIR_Team_Meta_Fields_Helper {
         $selected_teams = get_post_meta($post->ID, '_medir_assigned_teams', true);
         if (!is_array($selected_teams)) $selected_teams = [];
 
+        wp_nonce_field('medir_save_member_team_action', 'medir_team_nonce');
+
         $teams = get_posts([
             'post_type' => 'medir_teams',
             'numberposts' => -1,

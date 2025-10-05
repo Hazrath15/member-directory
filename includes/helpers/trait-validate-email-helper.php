@@ -1,6 +1,7 @@
 <?php
 trait MEDIR_Validate_Email_Helper {
     function medir_block_duplicate_email_insert($data, $postarr) {
+        
         if (
             $data['post_type'] !== 'medir_member' ||
             (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
@@ -10,7 +11,7 @@ trait MEDIR_Validate_Email_Helper {
 
         if (!isset($_POST['medir_email'])) return $data;
 
-        $email = sanitize_email($_POST['medir_email']);
+        $email = sanitize_email(wp_unslash($_POST['medir_email']));
         if (empty($email)) return $data;
 
         $post_id = isset($postarr['ID']) ? (int)$postarr['ID'] : 0;
