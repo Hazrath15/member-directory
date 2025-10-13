@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php 
+    if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+    get_header(); 
+?>
 
 <div class="team-archive">
     <div class="breadcrumb-area" style="background:url(<?php echo esc_url(plugins_url( 'assets/img/breadcrumb-bg.png', plugin_dir_path( __DIR__ ) )); ?>) no-repeat center; background-size: cover;">

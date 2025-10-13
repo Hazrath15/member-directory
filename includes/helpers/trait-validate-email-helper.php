@@ -1,7 +1,12 @@
 <?php
 trait MEDIR_Validate_Email_Helper {
     function medir_block_duplicate_email_insert($data, $postarr) {
-        
+
+        if ( ! isset($_POST['medir_form_nonce']) || 
+             ! wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['medir_form_nonce'])), 'medir_save_form_action') ) {
+            return $data; // ✅ Return the unmodified $data
+        }
+
         if (
             $data['post_type'] !== 'medir_member' ||
             (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
